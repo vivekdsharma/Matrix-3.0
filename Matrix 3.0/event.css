@@ -1,0 +1,608 @@
+
+.navbar {
+    width: 100%;
+    height: 55px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 15;
+    z-index: 10;
+    border-bottom: 3.5px solid #9E2228;
+}
+
+.navbar .logo img {
+    height: 50px;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+.roboto{
+    text-decoration: none;
+    font-family: 'roboto' ;
+    font-size: 25px;
+    color: #fff;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+    padding-right: 15px;
+}
+
+
+
+.navbar .nav-links :hover {
+    transform: scale(1.2);
+    transition:  0.5s ;
+}
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    background-image: url('./images/bg.jpg');
+    background-size: cover;
+   
+}
+
+/* Container */
+.container {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    top: 30%;
+}
+
+/* Card Styles */
+.card {
+    width: 150px;
+    height: 250px;
+    background-image: url("./images/image.png");
+    background-size: cover;
+    border-radius: 0px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    
+}
+#div1 {
+    rotate: -20deg;
+    z-index: 0;
+    position: relative;
+    top: 30px;
+    left: 30px;
+}
+#div2 {
+    z-index: 1;
+    
+    position: relative;
+}
+#div3 {
+    rotate: 20deg;
+    z-index: 2;
+    position: relative;
+    top: 30px;
+    left: -30px;
+}
+#div1:hover {
+    transform: translateY(-10px) scale(1.2);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+#div2:hover {
+    transform: translateY(-10px) scale(1.2);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+#div3:hover {
+    transform: translateY(-10px) scale(1.2);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+#div1, #div2, #div3 {
+
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+
+
+
+#div1.moved-left {
+    transform: translateX(-200px) rotate(20deg) translateY(-100px);
+}
+
+#div2.getdown{
+    transform: translateY(0px) ;
+}
+
+#div3.moved-right {
+    transform: translateX(200px) rotate(-20deg)
+    translateY(-100px);
+}
+
+
+
+
+
+
+
+/* Modal Styles */
+#modal1 {
+    display: none;
+    position: relative;
+    margin-top: 5%;
+    width: 20vw;
+    height: 90vh;
+    /* background-image: url('esc_nexus.png');
+    background-size: contain;
+    background-repeat: no-repeat; */
+    align-items: center;
+    z-index: 1000;
+}
+#modal2 {
+    display: none;
+    position: relative;
+    margin-top: 5%;
+    width: 20vw;
+    height: 80vh;
+    /* background-image: url('rb.jpg');
+    background-size: contain;
+    background-repeat: no-repeat; */
+    align-items: center;
+    z-index: 1000;
+   
+}
+#modal3 {
+    display: none;
+    position: relative;
+    margin-top: 5%;
+    width: 25vw;
+    height: 80vh;
+    /* background-image: url('rb.jpg');
+    background-size: contain;
+    background-repeat: no-repeat; */
+
+    /* background-color: blue; */
+    /* background:rgba(224,177,127,255); */
+    align-items: center;
+    z-index: 1000;
+    
+}
+
+.rulebookImage{
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    height: 70%;
+    margin-top: 0;
+}
+
+
+.register {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    padding: 15px 0;
+    background-color: #9E2228; /* Button color */
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-decoration: none; /* Ensure no underlines */
+}
+
+.register:hover {
+    background-color: #b52b33; /* Slightly lighter red on hover */
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.register:active {
+    background-color: #7a161b;
+    transform: translateX(-50%) scale(0.98);
+}
+
+
+
+.blackscreen{
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.816); /* Semi-transparent black */
+    z-index: 1; /* Make sure it stays behind the popup */
+}
+
+
+/* Target Selector for Pop-Up */
+#modal1:target,
+#modal2:target,
+#modal3:target {
+    display: flex;
+}
+
+.close-btn {
+    position: absolute;
+    top: 00px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    
+
+}
+
+
+
+
+
+
+.matrix img{
+   
+   
+    width:40%;
+    position: absolute;
+    top: 550px;
+    left: 30%;
+    
+}
+
+
+/* @media screen and (max-width: 786px) {
+body {
+
+height: 150vh;
+background-position: center;
+
+}
+.nav-links{
+display: none!important;
+}
+.container{
+width: 95%;
+
+}
+
+.card{
+background-size: contain;
+background-repeat: no-repeat;
+
+}
+.matrix img{
+display: none;
+}
+
+
+#div1.moved-left {
+    transform: translateY(250px) rotate(20deg)
+    translateX(10px) 
+}
+
+#div2.getdown{
+    transform: translateY(60px) ;
+}
+
+#div3.moved-right {
+    transform: translateY(-180px) rotate(-20deg)translateX(-150px)
+    
+} 
+}*/
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1150px) {
+
+
+    #modal1 {
+        margin-top: 6.5%;
+        margin-left: 10%;
+        width: 30vw;
+        height: 90vh;
+    }
+    #modal2 {
+        margin-top: 6.5%;
+        margin-left: 10%;
+        width: 30vw;
+        height: 90vh;
+       
+    }
+    #modal3 {
+        margin-top: 6.5%;
+        margin-left: 10%;
+        width: 30vw;
+        height: 90vh;
+        
+    }
+
+
+
+}
+
+
+
+@media screen and (max-width: 850px) {
+
+
+    #modal1 {
+        margin-top: 6.5%;
+        margin-left: 0%;
+        width: 40vw;
+        height: 95vh;
+    }
+    #modal2 {
+        margin-top: 6.5%;
+        margin-left: 0%;
+        width: 40vw;
+        height: 95vh;
+       
+    }
+    #modal3 {
+        margin-top: 6.5%;
+        margin-left: 0%;
+        width: 40vw;
+        height: 95vh;
+        
+    }
+
+
+
+}
+
+
+
+
+
+@media screen and (max-width: 786px) {
+
+
+    #modal1 {
+        margin-top: 7.5%;
+        margin-left: 0%;
+        width: 45vw;
+        height: 90vh;
+    }
+    #modal2 {
+        margin-top: 7.5%;
+        margin-left: 0%;
+        width: 45vw;
+        height: 90vh;
+       
+    }
+    #modal3 {
+        margin-top: 7.5%;
+        margin-left: 0%;
+        width: 45vw;
+        height: 90vh;
+        
+    }
+
+
+
+}
+
+
+
+
+
+
+@media screen and (max-width: 720px) {
+
+
+    #modal1 {
+        margin-top: 10%;
+        margin-left: 0%;
+        width: 45vw;
+        height: 90vh;
+    }
+    #modal2 {
+        margin-top: 10%;
+        margin-left: 0%;
+        width: 45vw;
+        height: 90vh;
+       
+    }
+    #modal3 {
+        margin-top: 10%;
+        margin-left: 0%;
+        width: 45vw;
+        height: 90vh;
+        
+    }
+
+
+
+}
+
+/* @media screen and (max-width: 620px) {
+
+
+    #modal1 {
+        margin-top: 10%;
+        margin-left: 0%;
+        width: 45vw;
+        height: 90vh;
+    }
+    #modal2 {
+        margin-top: 15%;
+        margin-left: 0%;
+        width: 45vw;
+        height: 70vh;
+       
+    }
+    #modal3 {
+        margin-top: 15%;
+        margin-left: 0%;
+        width: 45vw;
+        height: 70vh;
+        
+    }
+
+
+
+} */
+
+
+
+
+
+@media screen and (max-width: 540px) {
+
+
+    #modal1 {
+        margin-top: 10%;
+        margin-left: 0%;
+        width: 55vw;
+        height: 90vh;
+    }
+    #modal2 {
+        margin-top: 10%;
+        margin-left: 0%;
+        width: 55vw;
+        height: 90vh;
+       
+    }
+    #modal3 {
+        margin-top: 10%;
+        margin-left: 0%;
+        width: 55vw;
+        height: 90vh;
+        
+    }
+
+    .card {
+        width: 100px;
+        height: 180px;
+    }
+
+
+}
+
+
+
+@media screen and (max-width: 450px) {
+
+
+    #modal1 {
+        margin-top: 15%;
+        margin-left: 0%;
+        width: 60vw;
+        height: 90vh;
+    }
+    #modal2 {
+        margin-top: 15%;
+        margin-left: 0%;
+        width: 60vw;
+        height: 90vh;
+       
+    }
+    #modal3 {
+        margin-top: 15%;
+        margin-left: 0%;
+        width: 60vw;
+        height: 90vh;
+        
+    }
+
+    .card {
+        width: 100px;
+        height: 180px;
+    }
+
+
+}
+
+
+
+@media screen and (max-width: 420px) {
+
+
+    #modal1 {
+        margin-top: 16.5%;
+        margin-left: 0%;
+        width: 60vw;
+        height: 90vh;
+    }
+    #modal2 {
+        margin-top: 16.5%;
+        margin-left: 0%;
+        width: 60vw;
+        height: 90vh;
+       
+    }
+    #modal3 {
+        margin-top: 16.5%;
+        margin-left: 0%;
+        width: 60vw;
+        height: 90vh;
+        
+    }
+
+    .card {
+        width: 100px;
+        height: 180px;
+    }
+
+
+}
+
+
+
+
+@media screen and (max-width: 350px) {
+
+
+    #modal1 {
+        margin-top: 25%;
+        margin-left: 0%;
+        width: 75vw;
+        height: 90vh;
+    }
+    #modal2 {
+        margin-top: 25%;
+        margin-left: 0%;
+        width: 75vw;
+        height: 90vh;
+       
+    }
+    #modal3 {
+        margin-top: 25%;
+        margin-left: 0%;
+        width: 75vw;
+        height: 90vh;
+        
+    }
+
+    .card {
+        width: 100px;
+        height: 180px;
+    }
+
+
+}
+
+
+

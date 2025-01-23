@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Matrix 3.0</title>
+      <link rel="stylesheet" href="Others/Navbar/navbar.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <link rel="stylesheet" href="Homepage/home.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+
+    <!--Nav Bar starts here-->
+      <nav>
+         <div class="logo">
+            <img id="logo2" src="Others/Navbar/Leadlogo.png" height="40px" >
+         </div>
+         <input type="checkbox" id="click">
+         <label for="click" class="menu-btn">
+         <i class="fas fa-bars"></i>
+         </label>
+         <ul>
+            <li><a class="active" href="Index.html">Home</a></li>
+            <li><a href="Events.html">Events</a></li>
+            <li><a href="Sponsors.html">Sponsors</a></li>
+            <li><a href="Contact Us.html">Contact Us</a></li>
+         </ul>
+      </nav>
+
+    <!--LEAD full form starts here -->
+        <div class="fulllead">
+            <img src="Homepage/Group 306.png" alt="lead">
+        </div>
+
+    <!--Matrix 3.0 starts here -->
+        <div class="matrix">
+            <img src="Homepage/Frame 37 (5).png" class="overlay-image" alt="Overlay Image">
+        </div>
+
+    <!-- Carousel -->
+<div class="carousel">
+
+    <div class="carousel-inner">
+
+        <div class="carousel-item">
+            <a href="Events.html"><img src="Homepage/image1.png" alt="Image 2"></a>
+        </div>
+
+        <div class="carousel-item">
+            <a href="Events.html"><img src="Homepage/image2.png" alt="Image 4"></a>
+        </div>
+
+        <div class="carousel-item">
+            <a href="Events.html"><img src="Homepage/image3.png" alt="Image 6"></a>
+        </div>
+    </div>
+</div>
+
+    <!-- Timer element -->
+<div class="timerbox">
+    <img src="Homepage/Rectangle 265.png" class="timerframe" alt="Center Image">
+     <div id="timer" class="timer"></div>
+
+
+    <div id="timer" class="timer"></div>
+</div>
+
+
+<script>
+    // Timer Date
+    var countDownDate = new Date("Jan 31, 2025 00:00:00").getTime();
+
+    // Update the timer every 1 second
+    var x = setInterval(function () {
+
+        // Get the current date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Calculate days, hours, minutes, and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the timer div
+        document.getElementById("timer").innerHTML = days + " days: " + hours + "hr: " + minutes + " min: " + seconds + "s";
+
+        // If the countdown is over, display a message
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("timer").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+
+
+    
+
+
+</script>
+
+
+
+   </body>
+</html>
