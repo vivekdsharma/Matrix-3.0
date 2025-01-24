@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="event.css">
+    <title>Events</title>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="./images/logo.png" alt="Logo">
+        </div>
+        <nav class="nav-links">
+            <a href="Index.html" class="roboto">Home</a>
+            <a href="events.html" class="roboto">Events</a>
+            <a href="Sponsors.html" class="roboto">Sponsors</a>
+            <a href="Contact Us.html" class="roboto">Contact Us</a>
+        </nav>
+    </header>
+
+    <div class="blackscreen" id="blackscreen"></div>
+
+    <div class="container">
+        <div class="card" id="div1" onclick="openModal('modal1')"></div>
+        <div class="card" id="div2" onclick="openModal('modal2')"></div>
+        <div class="card" id="div3" onclick="openModal('modal3')"></div>
+    </div>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <a href="" class="close-btn" onclick="closeModal()">&times;</a>
+        </div>
+        <img src="./images/esc_nexus.png" alt="Cash Or Clash" class="rulebookImage">
+        <a href="Register.html">
+         <div class="register" onclick="redirectToPage()">Register</div>
+       </a>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <a href="" class="close-btn" onclick="closeModal()">&times;</a>
+        </div>
+        <img src="./images/error404.png" alt="Cash Or Clash" class="rulebookImage">
+        
+        <a href="Register.html">
+         <div class="register" onclick="redirectToPage()">Register</div>
+       </a>
+
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <a href="#" class="close-btn" onclick="closeModal()">&times;</a>
+        </div>
+
+        <img src="./images/cash_or_clash.png" alt="Cash Or Clash" class="rulebookImage">
+        <a href="Register.html">
+        <div class="register" onclick="redirectToPage()">Register</div>
+      </a>
+    </div>
+
+    <div class="matrix">
+        <img src="./images/matrix.png" alt="matrix">
+    </div>
+
+
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById('blackscreen').style.display = 'block';
+            document.getElementById(modalId).style.display = 'flex';
+            document.querySelectorAll('.card').forEach(card => {
+                card.style.opacity = '0.3'; // Dim all cards when modal opens
+            });
+            document.querySelector('.navbarhide').style.display = 'none';
+        }
+
+        function closeModal() {
+            document.getElementById('blackscreen').style.display = 'none';
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.style.display = 'none';
+            });
+            document.querySelectorAll('.card').forEach(card => {
+                card.style.opacity = '1'; // Restore card opacity when modal closes
+            });
+
+            document.querySelector('.navbarhide').style.display = 'block';
+
+            function redirectToPage() {
+        window.location.href="register.html"; // Redirects to abc.html
+    }
+
+            
+        }
+    </script>
+</body>
+</html>
