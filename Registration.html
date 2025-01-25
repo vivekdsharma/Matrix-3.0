@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Squid Game Registration</title>
+  </head>
+  <body>
+
+
+    <!-- Navbar -->
+    <div id="navbar" class="navbar">
+      <button class="close-btn" onclick="toggleNavbar()">×</button>
+      <h2>Menu</h2>
+      <a href="#">Home</a>
+      <a href="#">Events</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <!-- Open Navbar Button -->
+    <button class="open-navbar-btn" onclick="toggleNavbar()">☰ Menu</button>
+
+    <!-- Main Content -->
+    <div class="content">
+      <div class="container">
+        <h1>Registration</h1>
+        <form id="registrationForm">
+          <div class="form-group">
+            <label for="event">Event:</label>
+            <select id="event" name="event" required>
+              <option value="event1">Event 1</option>
+              <option value="event2">Event 2</option>
+              <option value="event3">Event 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="teamName">Team Name:</label>
+            <input
+              type="text"
+              id="teamName"
+              name="teamName"
+              placeholder="Enter team name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="teamLeader">Team Leader:</label>
+            <input
+              type="text"
+              id="teamLeader"
+              name="teamLeader"
+              placeholder="Enter team leader"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="phoneNo">Phone Number:</label>
+            <input
+              type="tel"
+              id="phoneNo"
+              name="phoneNo"
+              placeholder="Enter phone number"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="rollNo">Roll Number:</label>
+            <input
+              type="text"
+              id="rollNo"
+              name="rollNo"
+              placeholder="Enter roll number"
+              required
+            />
+          </div>
+
+          <div id="membersContainer" class="form-group">
+            <label>Team Members:</label>
+            <!-- Initial member input -->
+            <input
+              type="text"
+              name="memberName"
+              placeholder="Member 1 Name"
+              required
+            />
+          </div>
+
+          <!-- Button to dynamically add more members -->
+          <button type="button" class="add-btn" onclick="addMember()">
+            Add Member
+          </button>
+
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Toggle Navbar visibility
+      function toggleNavbar() {
+        const navbar = document.getElementById("navbar");
+        navbar.classList.toggle("open");
+      }
+      // Function to add a new member input dynamically
+      function addMember() {
+        const membersContainer = document.getElementById("membersContainer");
+        const inputCount = membersContainer.querySelectorAll("input").length;
+
+        // Create a new input for the additional member
+        const newMemberInput = document.createElement("input");
+        newMemberInput.type = "text";
+        newMemberInput.name = "memberName";
+        newMemberInput.placeholder = `Member ${inputCount + 1} Name`;
+        newMemberInput.style = `
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.15);
+      color: rgb(6, 6, 6);
+      margin-top: 10px;
+    `;
+
+        membersContainer.appendChild(newMemberInput);
+      }
+
+      const form = document.getElementById("registrationForm");
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        // Gather member inputs, filtering out empty names
+        const membersInputs = document.getElementsByName("memberName");
+        const members = Array.from(membersInputs)
+          .map((input) => input.value.trim())
+          .filter((name) => name !== "");
+
+        const data = {
+          event: document.getElementById("event").value,
+          teamName: document.getElementById("teamName").value,
+          teamLeader: document.getElementById("teamLeader").value,
+          phoneNo: document.getElementById("phoneNo").value,
+          email: document.getElementById("email").value,
+          rollNo: document.getElementById("rollNo").value,
+          members, // Send only non-empty members
+        };
+
+        try {
+          const response = await fetch("http://localhost:5000/register", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          });
+
+          const result = await response.json();
+          alert(result.message);
+        } catch (error) {
+          console.error("Error:", error);
+          alert("An error occurred while submitting the form.");
+        }
+      });
+    </script>
+  </body>
+</html>

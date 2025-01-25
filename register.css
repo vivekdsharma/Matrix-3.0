@@ -1,0 +1,194 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
+
+  /* Navbar Styles */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: none;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+    overflow-y: auto;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navbar.open {
+    display: flex;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 30px;
+    color: rgb(228, 41, 41);
+    cursor: pointer;
+    background: transparent;
+    border: none;
+  }
+
+  .close-btn:hover {
+    color: #ff4757;
+  }
+
+  .navbar h2 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 32px;
+  }
+
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  /* Main Content Styles */
+  .content {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+    margin-top: 50px; /* Adds space for the navbar */
+    height: auto;
+  }
+
+  .container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+    text-align: left;
+    box-sizing: border-box;
+    min-height: 100vh; /* Ensure container stretches to the bottom */
+  }
+
+  h1 {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 28px;
+    text-decoration: underline;
+    color: #ffffff;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-group label {
+    margin-bottom: 5px;
+    font-size: 15px;
+    color: #ffffff;
+  }
+
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.15);
+    color: rgb(6, 6, 6);
+  }
+  form-group input,
+  .form-group select {
+    width: 100%; /* Ensures all text boxes and dropdowns have the same width */
+    padding: 10px; /* Consistent padding for all */
+    font-size: 16px; /* Uniform font size */
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.15); /* Consistent background */
+    color: rgb(6, 6, 6); /* Text color */
+    box-sizing: border-box; /* Ensures padding does not affect width */
+  }
+  .form-group select {
+    appearance: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: rgb(3, 3, 3);
+    cursor: pointer;
+  }
+
+  button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  .add-btn {
+    background-color: #1e90ff;
+    color: rgb(2, 2, 2);
+  }
+
+  .submit-btn {
+    background-color: #ff4757;
+    color: white;
+  }
+
+  .submit-btn:hover {
+    background-color: #c82333;
+  }
+
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .content {
+      padding: 10px;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 90%; /* Reduce max width for better mobile responsiveness */
+      min-height: auto; /* Allow content to shrink to fit smaller screens */
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    button {
+      font-size: 16px;
+      padding: 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .content {
+      padding: 5px;
+    }
+
+    .container {
+      padding: 15px;
+      max-width: 100%; /* Full width for smaller screens */
+    }
+
+    h1 {
+      font-size: 22px;
+    }
+
+    button {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
