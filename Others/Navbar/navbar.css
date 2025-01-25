@@ -12,7 +12,7 @@ nav{
   background: #000000;
   align-items: center;
   justify-content: space-between;
-  padding: 0 50px 0 100px;
+  padding: 4px 50px 0px 5px;
   flex-wrap: wrap;
   z-index: 5000;
 }
