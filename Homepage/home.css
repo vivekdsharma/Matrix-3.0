@@ -157,11 +157,7 @@
 
 }
 
-@media (max-width: 480px) {
-    .matrix {
-     width: 70%; /* Further adjust for very small screens */
-    }
-  }
+
 
 
 
@@ -176,52 +172,72 @@
 
         .matrix {
                 width: 60%; /* Adjust the container width for smaller screens */
+                position: relative;
+     margin-top: 10%;
               }
-            
-
-            .timer{
+        .timer{
                 font-size: 17px;
             }
-            .timerframe{
+        .timerframe{
                 height: 55px;
                 width: 300px;
             }
             
-            .carousel{
+        .carousel{
                 perspective: 600px;
             }
             
-             .carousel-item{
+        .carousel-item{
                 
                  width: 250%;
                 height: auto; 
             } 
-            .carousel-item:nth-child(1) {
+        .carousel-item:nth-child(1) {
                 transform: rotateY(0deg) translateZ(100px);
                 z-index: 3;
             }
     
-            .carousel-item:nth-child(2) {
+        .carousel-item:nth-child(2) {
                 transform: rotateY(120deg) translateZ(100px);
                 z-index: 3;
             }
     
-            .carousel-item:nth-child(3) {
+        .carousel-item:nth-child(3) {
                 transform: rotateY(240deg) translateZ(100px);
                 z-index: 3;
             } 
         }
         
 
-        @media (max-width: 480px) {
+    @media (max-width: 480px) {
                 
-                .carousel{
-                    perspective: 900px;
-                }
+    .fulllead {
+        position: relative;
+        margin-top: 5%;
+        
+        
+        
+        
+    }
+        
+    .matrix {
+        width: 80% !important;
+        position: relative;
+        margin-top: 10%;
+    }
+        
+
+
+
+
+
+    .carousel{
+    perspective: 900px;
+    }
                 
-                 .carousel-item{
+     .carousel-item{
                     
-                     width: 250%;
+                    width: 320%;
                     height: auto; 
                 } 
                 .carousel-item:nth-child(1) {
@@ -240,16 +256,18 @@
                 } 
 
                 .timerbox {
-                    margin-top: 10%; 
+                    margin-top: 15%; 
+                    width: 80%;
 
 
 
                 }
+                .timer{
+                    font-size: 20px;
+
+                }
 
             }
-
-
-
 
 
 
