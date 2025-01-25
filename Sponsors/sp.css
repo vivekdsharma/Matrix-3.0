@@ -23,10 +23,10 @@ nav{
   display: flex;
   height: 55px;
   width: 100%;
-  background: #1b1b1b;
+  background: #000000;
   align-items: center;
   justify-content: space-between;
-  padding: 0 0 0 100px;
+  padding: 0 0 0 50px;
   flex-wrap: wrap;
   z-index: 50;
 }
@@ -75,7 +75,7 @@ input[type="checkbox"]{
 }
 @media (max-width: 1000px){
   nav{
-    padding: 0 60px 0 50px;
+    padding: 0 60px 0 30px;
   }
 }
 @media (max-width: 900px) {
